@@ -1,0 +1,167 @@
+<!DOCTYPE html >
+<html lang="zh-CN">
+<head>
+<title>传奇王者</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+<script language="JavaScript" src="jquery.min.js"></script>
+<style type="text/css">
+/* 内外边距通常让各个浏览器样式的表现位置不同 reset style*/
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea,blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section{
+    margin: 0;
+    padding: 0;
+}
+a{
+	color: #fff;
+	text-decoration: none;;
+}
+#mask{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+	background-color: rgba(0,0,0,0.5);
+	display: none;
+}
+#share{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 3;
+	display: none;
+}
+#mask2{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 4;
+	display: none;
+}
+.top{
+	position: relative;
+	line-height: 0;
+}
+.footer{
+	float: left;
+	width: 100%;
+	background-color:#010423;
+	color: #fff;
+	font-size: 12px;
+}
+.footer p{
+	display: block;
+	float: left;
+	height:40px;
+	line-height: 40px;
+	margin-left: 10px;
+}
+.clear{
+	height: 64px;
+	width: 100%;
+	clear: both;
+}
+.load{
+	width: 100%;
+	height: 66px;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+}
+.load img{
+	width: 100%;
+	height: 100%;
+}
+/**cnzz统计id**/
+#cnzz_stat_icon_1259092026{
+	display: none;
+}
+</style>
+</head>
+<body>
+	<!--为兼容微信打开网页所设置的-->
+	<div id="mask"></div>
+	<img id="share" src="images/share.png" />
+	<div id="mask2"></div>
+
+	<div class="top">
+	<!--把一张图片切成几张分开加载-->
+        <img src="images/1.jpg" width="100%">
+        <img src="images/2.jpg" width="100%">
+        <img src="images/3.jpg" width="100%">
+        <a style="display: block;width:52%;height:6%;position: absolute;left:24%;top:25%;" href="http://www.huiyaohuyu.com/apk/chuanqi/chuanqi_touxiao1.apk"></a>
+	</div>
+	<!--底部栏下载控件-->
+	<a href="http://www.huiyaohuyu.com/apk/chuanqi/chuanqi_touxiao1.apk"><div class="load" ><img src="images/load.jpg" ></div></a> 
+	<script>
+	    // 判断是否为微信打开页面
+		function isWeixin(){ 
+		    var ua = navigator.userAgent.toLowerCase(); 
+		    if(ua.match(/MicroMessenger/i)=="micromessenger") { 
+		        return true; 
+		     } else { 
+		        return false; 
+		    } 
+		}
+
+		window.onload = function(){
+			if(isWeixin()){
+				document.getElementById('mask2').style.display = 'block';
+			}
+			else{
+				document.getElementById('mask2').style.display = 'none';
+			}
+
+			document.getElementById("mask2").onclick = function(){
+				if(isWeixin()){
+					document.getElementById('mask2').style.display = 'none';
+					document.getElementById('mask').style.display = 'block';
+					document.getElementById('share').style.display = 'block';
+				}	 			
+			}
+			document.getElementById('share').onclick = function(){
+				document.getElementById('mask').style.display = 'none';
+				document.getElementById('share').style.display = 'none';
+			}
+
+			//监听滚动条，当往下滚动的时候底部下载栏出现
+			$(window).scroll(function() {
+	 			//var  dheight=$(document).height;
+				//var  wheight=$(window).height();
+				//var  h = document.body.clientHeight;
+				var  scrolltop=$(document).scrollTop();
+				
+				//alert(scrolltop);
+				if(scrolltop>20){
+					 $("#load").css({
+					 	'position': 'fixed',
+					 	bottom: '0px',
+					 	left:'0px'
+					 });
+				}else{
+					$('#load').css({
+						'position': 'static'
+					});
+				}
+ 		    })
+		}
+	</script>
+
+	<script type="text/javascript">
+        //cnzz站长数据统计
+		//声明_czc对象:
+		var _czc = _czc || [];
+		//绑定siteid，请用您的siteid替换下方"XXXXXXXX"部分
+        _czc.push(["_setAccount", "1259092026"]);
+         _czc.push(﻿["_trackPageview","/apk/chuanqi/chuanqi_touxiao1.apk","http://www.hongzetai.com/h5/cq/pg1/"]); 
+         var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1259092026'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1259092026%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+     </script>	
+     <!--talkingdata数据监控-->
+	<script src="http://sdk.talkingdata.com/app/h5/v1?appid=D08553FFC64FB79CA80BC099814DEFA2&vn=name&vc=1.0.1"></script>
+</body>
+</html>
