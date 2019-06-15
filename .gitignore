@@ -63,3 +63,7 @@ jspm_packages/
 
 #public-key.txt   gpg
 public-key.txt
+
+#lock
+yarn.lock
+package-lock.json

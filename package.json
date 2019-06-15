@@ -1,0 +1,23 @@
+{
+  "name": "js-utils",
+  "version": "1.0.0",
+  "description": "js-utils",
+  "main": "index.js",
+  "dependencies": {
+    "react-router-redux": "^4.0.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wuhaidong-me/js-utils.git"
+  },
+  "author": "hayden",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wuhaidong-me/js-utils/issues"
+  },
+  "homepage": "https://github.com/wuhaidong-me/js-utils#readme"
+}
