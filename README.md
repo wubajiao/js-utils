@@ -1,2 +1,4 @@
-# utils
-initial
+# js-utils
+manage utils by npm or yarn
+
+
