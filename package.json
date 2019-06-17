@@ -4,6 +4,8 @@
   "description": "js-utils",
   "main": "index.js",
   "dependencies": {
+    "lodash": "^4.17.11",
+    "moment": "^2.24.0",
     "react-router-redux": "^4.0.8"
   },
   "devDependencies": {},
